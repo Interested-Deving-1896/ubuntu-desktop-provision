@@ -1,19 +1,33 @@
-# Ubuntu Desktop Provision
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# ubuntu-desktop-provision
 
-[![CI](https://github.com/canonical/ubuntu-desktop-provision/actions/workflows/ci.yml/badge.svg)](https://github.com/canonical/ubuntu-desktop-provision/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/canonical/ubuntu-desktop-provision/branch/main/graph/badge.svg?token=JcedDc47dU)](https://codecov.io/gh/canonical/ubuntu-desktop-provision)
-[![screenshots](https://img.shields.io/badge/screenshots-gray?logo=ubuntu)](https://github.com/canonical/ubuntu-desktop-provision-screenshots)
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/ubuntu-desktop-provision)
 
-## Bugs
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-This repository houses the Flutter UI used by the Ubuntu Installer. If you would like to report a UI bug, or make a feature request, please use the templates found [here](https://github.com/canonical/ubuntu-desktop-provision/issues). If your issue involves backend functionality, please report it under the Subiquity project [here](https://bugs.launchpad.net/ubuntu/+source/subiquity).
+## Architecture
 
-## 24.04.1 OEM provisioning
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-For configuring an OEM provisioning flow for Ubuntu 24.04.1 LTS, where user creation and account setup is handled
-seperately to system setup, please refer to [this guide](docs/oem-provisioning-24_04_1.md).
+## Install
+
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
+
+```bash
+git clone https://github.com/Interested-Deving-1896/ubuntu-desktop-provision.git
+cd ubuntu-desktop-provision
+```
+
+## Usage
+
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
 ## Configuration
+
 
 The full configuration guide can be read [here](https://docs.google.com/document/d/10R0YOj4e8BTv6XPw9OE_y7GDy72xPqA5XP5lu0M7VbE/edit?usp=sharing).
 
@@ -146,53 +160,46 @@ The language code format that is used is the two-letter language code followed b
 specifies the regional or national variant of that language. For example en_US represents American English and pt_BR
 represents Brazilian Portuguese.
 
-## Repository Structure
+## CI
 
-### Branches and Snap Packages
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-Active development for all snaps built from this monorepo takes place on the
-`main` branch. To continue supporting Ubuntu releases with bug fixes, dedicated
-branches (e.g. `ubuntu/24.04`) are created once development on features for an
-upcoming release begins.
-Snaps are built from dedicated branches that only contain the snapcraft.yaml
-(and related files) for a given snap.
-In order to create a new snap build on launchpad the `source-commit` in the
-snapcraft.yaml on the corresponding branch (see table below) needs to be updated.
+## Mirror chain
 
-| Snap name | Flutter package | Snap branches |
-| - | - | - |
-| `ubuntu-desktop-bootstrap` | `ubuntu_bootstrap` | `snap/ubuntu-desktop-bootstrap/*` |
-| `ubuntu-desktop-init` | `ubuntu_init` | `snap/ubuntu-desktop-init/*` |
-| `factory-reset-tools` | `factory_reset_tools` | `snap/factory-reset-tools/*` |
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/ubuntu-desktop-provision`](https://github.com/Interested-Deving-1896/ubuntu-desktop-provision) and mirrored through:
 
-In order to simplify the release process a workflow to automatically bump `source-commit`s and raise a corresponding PR is available.
-PRs targeting the `main` or `ubuntu/*` branches need to be tagged with one of the following labels:
-- `snap/none`
-- `snap/ubuntu-desktop-bootstrap`
-- `snap/ubuntu-desktop-init`
-- `snap/factory-reset-tools`
+```
+Interested-Deving-1896/ubuntu-desktop-provision  ──►  OpenOS-Project-OSP/ubuntu-desktop-provision  ──►  OpenOS-Project-Ecosystem-OOC/ubuntu-desktop-provision
+```
 
-After successfully merging the PR the workflow will create or update a release PR targeting the corresponding snap branch (e.g. `snap/ubuntu-desktop-bootstrap/main` for a PR targeting `main` tagged with `snap/ubuntu-desktop-bootstrap`, or `snap/factory-reset-tools/24.04` for a PR targeting `ubuntu-24.04` tagged with `snap/factory-reset-tools`).
-Note: currently this works only for PRs raised from a branch within this repository (not from public forks of the repository).
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
+## Contributors
 
-### Frontend
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
 
-The UI is written in [Flutter](https://flutter.dev/) and consists of multiple Dart/Flutter packages contained in `packages/`. The most important ones are:
-* `ubuntu_bootstrap` - Flutter UI that drives `subiquity` in the 'device bootstrap' stage. This is the core of the `ubuntu-desktop-bootstrap` snap and replaces the `ubuntu-desktop-installer`.
-* `ubuntu_init` - Flutter UI that drives `provd` in the 'first boot initialization' stage. This is the core of the `ubuntu-desktop-init` snap and serves as a replacement for `gnome-initial-setup`.
-* `ubuntu_provision` - Flutter package that contains shared code and pages used by both `ubuntu_bootstrap` and `ubuntu_init`.
-* `ubuntu_wizard` - Flutter package that provides the common wizard-style UI framework.
-* `subiquity_client` and `provd_client` - Dart packages that provide a client library for the different backends.
+## Origins
 
-### Backend
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
 
-TODO
+## Resources
 
-## Contributing
-
-See our [contributor guidelines](docs/CONTRIBUTING.md).
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
 ## License
 
-The Ubuntu Desktop Provision is licensed under the [GNU General Public License version 3](LICENSE).
+<!-- AI:start:license -->
+[GPL-3.0](https://github.com/Interested-Deving-1896/ubuntu-desktop-provision/blob/main/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
